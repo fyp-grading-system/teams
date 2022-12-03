@@ -1,4 +1,4 @@
-package com.fypgrading.teams.messaging;
+package com.fypgradingsystem.teams.messaging;
 
 import java.util.List;
 import java.util.stream.Collectors;
