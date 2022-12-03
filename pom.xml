@@ -23,10 +23,6 @@
       <version>1.7.0</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.amqp</groupId>
       <artifactId>spring-rabbit</artifactId>
     </dependency>
@@ -34,6 +30,10 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
       <version>4.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
     </dependency>
     <dependency>
       <groupId>org.keycloak</groupId>

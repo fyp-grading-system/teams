@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Publisher {
-  
   @Value("${queue.name}")
   private String message;
 

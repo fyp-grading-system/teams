@@ -3,8 +3,12 @@ package com.fypgradingsystem.teams.messaging;
 import io.vertx.core.json.JsonObject;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Message {
   private String queue;

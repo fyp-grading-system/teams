@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class QueueSender {
-  
   @Autowired
   private RabbitTemplate rabbitTemplate;
 
