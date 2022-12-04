@@ -11,10 +11,9 @@ import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 
-
 @Service
 public class TeamRepository {
-  
+
   @Autowired
   TeamCrudRepository crudRepository;
 
@@ -25,6 +24,10 @@ public class TeamRepository {
     return Uni.createFrom().future(crudRepository.findAll().collectList().toFuture()).onItem().transform(squads -> {
       return squads;
     });
+  }
+
+  public Uni<Void> deleteTeam(String id) {
+    return Uni.createFrom().future(crudRepository.deleteById(id).toFuture());
   }
 
   public Uni<Team> createTeam(Team squad) {
@@ -44,8 +47,8 @@ public class TeamRepository {
   public Uni<Team> assignJuryToTeam(String teamUUID, String juryEmail) {
     return crudRepository.getByTeamUUID(teamUUID).onItem().transform(persistedTeam -> {
       persistedTeam.assignToJury(juryEmail);
-      
-      if(juryEmail != null) {
+
+      if (juryEmail != null) {
         var json = new JsonObject();
         json.put("jury_email", juryEmail);
         json.put("members", persistedTeam.getMembers());

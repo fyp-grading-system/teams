@@ -9,6 +9,7 @@ import com.fypgradingsystem.teams.repository.TeamRepository;
 import io.smallrye.mutiny.Uni;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class TeamsResource {
@@ -24,5 +25,10 @@ public class TeamsResource {
   @GetMapping("teams")
   public Uni<List<Team>> getAllSquads() {
     return repository.getAllTeams();
+  }
+
+  @PostMapping("teams/delete/{id}")
+  public Uni<Void> deleteTeam(@PathVariable String id) {
+    return repository.deleteTeam(id);
   }
 }
